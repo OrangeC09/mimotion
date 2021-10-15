@@ -302,9 +302,9 @@ if __name__ == "__main__":
         exit(0)
 
     # 用户名（格式为 1**********）
-    user = "13758146733"
+    user = ""
     # 登录密码
-    passwd = "QWEqwe123"
+    passwd = ""
     # 要修改的步数，直接输入想要修改的步数值，留空为随机步数
     step = ""
     user_list = user.split('#')

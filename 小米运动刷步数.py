@@ -217,6 +217,25 @@ def push_tg(token, chat_id, desp=""):
             print(f"[{now}] 推送成功。")
         else:
             print(f"[{now}] 推送失败：{json_data['error_code']}({json_data['description']})")
+def QmsChan(qmsgkey:str,desp:str):
+    '''
+    推送Qms酱
+    '''
+    if qmsgkey == '' :
+        print("[注意] 未提供qmsgkey，不进行推送！")
+    else:
+        qqtalk = 'https://qmsg.zendee.cn:443/send/'+qmsgkey
+        qmsg_data = {
+            "msg":desp,
+            "qq":"260374918"
+        }
+        response = requests.post(qqtalk,data=qmsg_data)
+        json_qmsgdata=response.json()
+        # print(json_qmsgdata)
+        if json_qmsgdata['success'] == True:
+            print(f"[{now}]：Qmsg酱推送成功！")
+        else:
+            print(f"[{now}]Qms酱推送失败：{json_qmsgdata['reason']}。code:{json_qmsgdata['code']}")
 
 
 # 企业微信推送
